@@ -17,8 +17,8 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
             </div>
         </div>
         <div className="col-span-2 flex justify-center pt-4">
-            <div>
-                <div className="rounded-lg h-[200px] w-[400px] whiteOpacity px-4 mb-4">
+            <div className='text-white'>
+                <div className="rounded-lg h-[150px] w-[400px] whiteOpacity px-4 mb-4">
                     <div className='h-[4Opx] font-[500] text-3xl border-b-[1px] border-gray-200 leading-[40px] text-center'>
                         {`${weather?.name}, ${weather?.sys.country}`}
                     </div>
@@ -33,14 +33,14 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-lg h-[auto] text-xl flex justify-between w-[400px] whiteOpacity">
+                <div className="rounded-lg h-[auto] text-xl flex justify-between w-[400px] whiteOpacity p-6">
                     <div>
                         <div>Lon</div>
-                        <div>{weather?.coord.lon}</div>
+                        <div>{(weather?.coord.lon).toFixed(1)}</div>
                     </div>
                     <div>
                         <div>Lat</div>
-                        <div>{weather?.coord.lat}</div>
+                        <div>{(weather?.coord.lat).toFixed(1)}</div>
                     </div>
                     <div>
                         <div>Deg</div>
