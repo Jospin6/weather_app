@@ -1,16 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchWeather } from '../features/weatherSlice'
-import { getWeather } from '../helpers/index'
+import { getWeather, getquery } from '../helpers/index'
 import { useEffect } from 'react'
 import { AppDispatch } from '../features/store'
 
 
 export const WeatherInfos = () => {
     const weather = useSelector(getWeather)
+    const query = useSelector(getquery)
     const dispatch = useDispatch<AppDispatch>()
 
     useEffect(() => {
-        dispatch(fetchWeather("kigali"))
+        dispatch(fetchWeather(query))
     }, [dispatch])
 
     return <div className="grid grid-cols-4 gap-6 h-[94vh]">
