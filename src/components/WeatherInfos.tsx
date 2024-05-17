@@ -18,10 +18,19 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
         </div>
         <div className="col-span-2 flex justify-center pt-4">
             <div>
-                <div className="rounded-lg h-[200px] w-[400px] bg-gray-400 mb-4">
-                    <div>city name RW</div>
-                    <div>
-                        
+                <div className="rounded-lg h-[200px] w-[400px] whiteOpacity px-4 mb-4">
+                    <div className='h-[4Opx] font-[500] text-3xl border-b-[1px] border-gray-200 leading-[40px] text-center'>
+                        {`${weather?.name}, ${weather?.sys.country}`}
+                    </div>
+                    <div className='flex justify-between h-[100px]'>
+                        <div className='w-[100%] text-center font-[200]'>
+                            <div>HUMIDITY</div>
+                            <div> {`${weather?.main.humidity} %`} </div>
+                        </div>
+                        <div className='w-[100%] text-center'>
+                            <div>WIND</div>
+                            <div> {`${weather?.wind.speed} m/s`} </div>
+                        </div>
                     </div>
                 </div>
                 <div className="rounded-lg h-[200px] w-[400px] bg-gray-400">
