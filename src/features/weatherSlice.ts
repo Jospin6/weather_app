@@ -3,12 +3,14 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 interface initial_state {
     loading: boolean,
     weather: any,
+    query: string
     error: string
 }
 
 const initialState: initial_state = {
     loading: false,
     weather: null,
+    query: "kigali",
     error: ""
 }
 
@@ -26,7 +28,11 @@ export const fetchWeather = createAsyncThunk("weather/fetchWeather", async (term
 const weather = createSlice({
     name: "weather",
     initialState,
-    reducers: {},
+    reducers: {
+        setQuery: (state, action: PayloadAction<string>) => {
+            state.query = action.payload
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchWeather.pending, state => {
             state.loading = true
@@ -44,5 +50,6 @@ const weather = createSlice({
     }
 })
 
+export const { setQuery } = weather.actions
 
 export default weather.reducer
