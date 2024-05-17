@@ -7,7 +7,17 @@ import Snow from '../assets/images/Snow.jpg'
 import Thunderstorm from '../assets/images/Thunderstorm.jpg'
 
 const getWeather = (state: RootState) => state.weather.weather
+
 const getquery = (state: RootState) => state.weather.query
+
+const iconImage = (iconTitle: string): string => `https://openweathermap.org/img/wn/${iconTitle}@2x.png`
+
+const currentDate = (): string => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    const days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+    const d = new Date();
+    return `${days[d.getDay() - 1]}, ${d.getDate()} ${months[d.getMonth()]}`;
+  }
 
 const image = (imageTitle: string): object => {
     switch (imageTitle) {
@@ -31,5 +41,7 @@ const image = (imageTitle: string): object => {
 export {
     getWeather,
     getquery,
-    image
+    image,
+    iconImage,
+    currentDate
 }
