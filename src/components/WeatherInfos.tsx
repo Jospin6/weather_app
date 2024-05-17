@@ -1,7 +1,7 @@
 import { iconImage, currentDate } from '../helpers/index'
 export const WeatherInfos = ({ weather }: { weather: any }) => {
 
-    return <div className="grid grid-cols-4 gap-6 h-[94vh]">
+    return <div className="grid grid-cols-4 gap-6 h-[92vh]">
         <div className="col-span-2 relative">
             <div className="absolute left-[100px] bottom-[100px] 
             blackBgWithOpacity rounded-lg h-[auto] min-w-[200px] w-auto p-2 text-white">
