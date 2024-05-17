@@ -10,6 +10,8 @@ const getWeather = (state: RootState) => state.weather.weather
 
 const getquery = (state: RootState) => state.weather.query
 
+const getEror = (state: RootState) => state.weather.error
+
 const iconImage = (iconTitle: string): string => `https://openweathermap.org/img/wn/${iconTitle}@2x.png`
 
 const currentDate = (): string => {
@@ -43,5 +45,6 @@ export {
     getquery,
     image,
     iconImage,
-    currentDate
+    currentDate,
+    getEror
 }
