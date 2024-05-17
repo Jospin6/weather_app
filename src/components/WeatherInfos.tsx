@@ -33,8 +33,19 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-lg h-[200px] w-[400px] bg-gray-400">
-
+                <div className="rounded-lg h-[auto] text-xl flex justify-between w-[400px] whiteOpacity">
+                    <div>
+                        <div>Lon</div>
+                        <div>{weather?.coord.lon}</div>
+                    </div>
+                    <div>
+                        <div>Lat</div>
+                        <div>{weather?.coord.lat}</div>
+                    </div>
+                    <div>
+                        <div>Deg</div>
+                        <div>{weather?.wind.deg}</div>
+                    </div>
                 </div>
             </div>
         </div>
