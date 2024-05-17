@@ -13,16 +13,16 @@ function App() {
   useEffect(() => {
     dispatch(fetchWeather(query))
 }, [dispatch])
-const backgroundImage = image(weather?.weather[0].main)
-const back = {
-  ...backgroundImage,
+const backImage = image(weather?.weather[0].main)
+const backgroundImage = {
+  ...backImage,
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
 }
 
   return (
     <>
-      <div className="w-full h-[100vh]" style={back}>
+      <div className="w-full h-[100vh]" style={backgroundImage}>
           <Navbar/>
           <WeatherInfos weather={weather}/>
       </div>
