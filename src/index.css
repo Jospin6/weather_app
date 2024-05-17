@@ -9,13 +9,10 @@
     .shadow {
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
     }
-    .small-shadow {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
     .blackBgWithOpacity {
         background-color: rgba(0, 0, 0, 0.5);
     }
     .whiteOpacity {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.5);
     }
 }
