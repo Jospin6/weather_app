@@ -16,12 +16,17 @@ const initialState: initial_state = {
 
 export const fetchWeather = createAsyncThunk("weather/fetchWeather", async (term: string) => {
     const city = term.toLowerCase()
-    const response =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e3c940a324fe2ab50471d25876b2dd16`)
-    if (!response.ok) {
-        throw new Error("something went wrong")
+    try {
+        const response =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e3c940a324fe2ab50471d25876b2dd16`)
+        if (!response.ok) {
+            throw new Error("something went wrong")
+        }
+        const data = await response.json()
+        return data 
+    } catch (error) {
+        return {error: "You entered a wrong city name"}
     }
-    const data = await response.json()
-    return data
+    
 })
 
 
@@ -45,7 +50,7 @@ const weather = createSlice({
         .addCase(fetchWeather.rejected, (state) => {
             state.loading = false
             state.weather = []
-            state.error = "Wrong request"
+            state.error = "You entered a wrong city name "
         })
     }
 })
