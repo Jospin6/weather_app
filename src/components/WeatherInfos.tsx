@@ -36,11 +36,11 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
                 <div className="rounded-lg h-[auto] text-xl font-[500] blackBgWithOpacity flex justify-between w-[400px] p-6">
                     <div>
                         <div>Lon</div>
-                        <div>{(weather?.coord.lon).toFixed(1)}</div>
+                        <div>{(weather?.coord.lon)?.toFixed(1)}</div>
                     </div>
                     <div>
                         <div>Lat</div>
-                        <div>{(weather?.coord.lat).toFixed(1)}</div>
+                        <div>{(weather?.coord.lat)?.toFixed(1)}</div>
                     </div>
                     <div>
                         <div>Deg</div>

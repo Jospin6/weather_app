@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, PayloadAction, isRejectedWithValue } from '@reduxjs/toolkit'
 
 interface initial_state {
     loading: boolean,
@@ -16,17 +16,14 @@ const initialState: initial_state = {
 
 export const fetchWeather = createAsyncThunk("weather/fetchWeather", async (term: string) => {
     const city = term.toLowerCase()
-    try {
-        const response =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e3c940a324fe2ab50471d25876b2dd16`)
-        if (!response.ok) {
-            throw new Error("something went wrong")
+    return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e3c940a324fe2ab50471d25876b2dd16`)
+    .then(response => {
+        if (response.ok) {
+            return response.json()
         }
-        const data = await response.json()
-        return data 
-    } catch (error) {
-        return {error: "You entered a wrong city name"}
-    }
-    
+    })
+    .then(data => data)
+    .catch(error => isRejectedWithValue(error.message))
 })
 
 
@@ -47,10 +44,10 @@ const weather = createSlice({
             state.weather = action.payload
             state.error = ""
         })
-        .addCase(fetchWeather.rejected, (state) => {
+        .addCase(fetchWeather.rejected, (state, action: PayloadAction<any>) => {
             state.loading = false
             state.weather = []
-            state.error = "You entered a wrong city name "
+            state.error = action.payload
         })
     }
 })

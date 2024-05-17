@@ -21,7 +21,7 @@ const currentDate = (): string => {
     return `${days[d.getDay() - 1]}, ${d.getDate()} ${months[d.getMonth()]}`;
   }
 
-const image = (imageTitle: string): object => {
+const image = (imageTitle?: string): object => {
     switch (imageTitle) {
         case "Clear":
             return { backgroundImage: `url(${Clear})` }
@@ -36,7 +36,7 @@ const image = (imageTitle: string): object => {
         case "Thunderstorm":
             return { backgroundImage: `url(${Thunderstorm})` }
         default:
-            return {}
+            return {backgroundImage: `url(${Clear})`}
     }
 }
 

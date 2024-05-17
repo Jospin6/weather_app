@@ -1,15 +1,14 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Navbar } from "./components/Navbar"
 import { WeatherInfos } from "./components/WeatherInfos"
-import {getWeather, getquery, image,getEror} from './helpers/index'
+import {getquery, image} from './helpers/index'
 import { useEffect } from "react"
-import { AppDispatch } from './features/store'
+import { AppDispatch, RootState } from './features/store'
 import { fetchWeather } from './features/weatherSlice'
 import { ErrorMessage } from "./components/ErrorMessage"
 
 function App() {
-  const weather = useSelector(getWeather)
-  const error = useSelector(getEror)
+  const { weather} = useSelector((state: RootState) => state.weather);
   const dispatch = useDispatch<AppDispatch>()
   const query = useSelector(getquery)
   useEffect(() => {
@@ -26,9 +25,7 @@ const backgroundImage = {
     <>
       <div className="w-full h-[100vh]" style={backgroundImage}>
           <Navbar/>
-          {!error 
-            ? <WeatherInfos weather={weather}/> 
-            : <ErrorMessage error={error}/>}
+          {weather ? <WeatherInfos weather={weather}/> : <ErrorMessage/>}
           
       </div>
     </>
