@@ -13,7 +13,8 @@ const initialState: initial_state = {
 }
 
 export const fetchWeather = createAsyncThunk("weather/fetchWeather", async (term: string = "Kigali") => {
-    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${term}&units=metric&APPID=e3c940a324fe2ab50471d25876b2dd16`)
+    const city = term.toLowerCase()
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e3c940a324fe2ab50471d25876b2dd16`)
     .then(response => response.json())
     .catch(error => error.message)
 })
