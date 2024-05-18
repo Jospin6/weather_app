@@ -1,7 +1,7 @@
 import { iconImage, currentDate } from '../helpers/index'
 export const WeatherInfos = ({ weather }: { weather: any }) => {
 
-    return <div className="md:grid md:grid-cols-4 md:gap-6 h-[92vh]">
+    return <div className="md:grid md:grid-cols-4 md:gap-6 px-2 md:px-[0px] h-[92vh]">
         <div className="md:col-span-2 relative">
             <div className="md:absolute md:left-[100px] md:bottom-[100px] 
             blackBgWithOpacity rounded-lg h-[auto] min-w-[200px] 
@@ -17,7 +17,7 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
                 <div className="text-[17px] font-[200]"> {currentDate()} </div>
             </div>
         </div>
-        <div className="md:col-span-2 flex justify-center pt-4">
+        <div className="md:col-span-2 md:flex md:justify-center pt-4">
             <div className='text-white'>
                 <div className="rounded-lg h-[150px] w-full md:w-[400px] 
                 blackBgWithOpacity px-4 mb-4">
