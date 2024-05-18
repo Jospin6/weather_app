@@ -1,10 +1,10 @@
 import { iconImage, currentDate } from '../helpers/index'
 export const WeatherInfos = ({ weather }: { weather: any }) => {
 
-    return <div className="grid grid-cols-4 gap-6 h-[92vh]">
-        <div className="col-span-2 relative">
-            <div className="absolute left-[100px] bottom-[100px] 
-            blackBgWithOpacity rounded-lg h-[auto] min-w-[200px] w-auto p-2 text-white">
+    return <div className="md:grid md:grid-cols-4 md:gap-6 h-[92vh]">
+        <div className="md:col-span-2 relative">
+            <div className="md:absolute md:left-[100px] md:bottom-[100px] 
+            blackBgWithOpacity rounded-lg h-[auto] min-w-[200px] mb-[10px] md:mb-[0px] w-auto p-2 text-white">
                 <div className="flex">
                     <div className="flex items-top ">
                         <span className="text-5xl font-[500]"> {weather?.main.temp} </span>
@@ -16,7 +16,7 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
                 <div className="text-[17px] font-[200]"> {currentDate()} </div>
             </div>
         </div>
-        <div className="col-span-2 flex justify-center pt-4">
+        <div className="md:col-span-2 flex justify-center pt-4">
             <div className='text-white'>
                 <div className="rounded-lg h-[150px] w-[400px] blackBgWithOpacity px-4 mb-4">
                     <div className='h-[4Opx] font-[500] text-3xl border-b-[1px] border-gray-200 leading-[40px] text-center'>
