@@ -4,13 +4,14 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
     return <div className="md:grid md:grid-cols-4 md:gap-6 h-[92vh]">
         <div className="md:col-span-2 relative">
             <div className="md:absolute md:left-[100px] md:bottom-[100px] 
-            blackBgWithOpacity rounded-lg h-[auto] min-w-[200px] mb-[10px] md:mb-[0px] w-auto p-2 text-white">
+            blackBgWithOpacity rounded-lg h-[auto] min-w-[200px] 
+            mb-[10px] md:mb-[0px] w-auto p-2 text-white">
                 <div className="flex">
                     <div className="flex items-top ">
                         <span className="text-5xl font-[500]"> {weather?.main.temp} </span>
                         <span className="text-xl">°C</span>
                     </div>
-                    <img src={iconImage(weather?.weather[0].icon)} alt="icon image" width="50" height="50"/>
+                    <img src={iconImage(weather?.weather[0].icon)} alt="icon image" width="50" height="50" />
                 </div>
                 <div className="text-2xl font-[500]"> {weather?.weather[0].description} </div>
                 <div className="text-[17px] font-[200]"> {currentDate()} </div>
@@ -18,8 +19,10 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
         </div>
         <div className="md:col-span-2 flex justify-center pt-4">
             <div className='text-white'>
-                <div className="rounded-lg h-[150px] w-full md:w-[400px] blackBgWithOpacity px-4 mb-4">
-                    <div className='h-[4Opx] font-[500] text-3xl border-b-[1px] border-gray-200 leading-[40px] text-center'>
+                <div className="rounded-lg h-[150px] w-full md:w-[400px] 
+                blackBgWithOpacity px-4 mb-4">
+                    <div className='h-[4Opx] font-[500] text-3xl border-b-[1px] 
+                    border-gray-200 leading-[40px] text-center'>
                         {`${weather?.name}, ${weather?.sys.country}`}
                     </div>
                     <div className='flex justify-between h-[100px] font-[500] pt-6'>
@@ -33,7 +36,8 @@ export const WeatherInfos = ({ weather }: { weather: any }) => {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-lg h-[auto] text-xl font-[500] blackBgWithOpacity flex justify-between w-full md:w-[400px] p-6">
+                <div className="rounded-lg h-[auto] text-xl font-[500] blackBgWithOpacity 
+                flex justify-between w-full md:w-[400px] p-6">
                     <div>
                         <div>Lon</div>
                         <div>{(weather?.coord.lon)?.toFixed(1)}</div>
