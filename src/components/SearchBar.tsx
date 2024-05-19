@@ -12,9 +12,18 @@ export const SearchBar = () => {
     const searchCity = () => query !== "" && dispatch(fetchWeather(query))
 
     return <div className='flex bg-white h-[30px] w-[200px] md:w-[300px] rounded-lg'>
-        <input type="text" value={query} onChange={handleSearch} placeholder="city name" className='mx-[5px] w-[90%] outline-none'/>
+        <input type="text" 
+            value={query} 
+            onChange={handleSearch} 
+            placeholder="city name" 
+            className='mx-[5px] w-[90%] outline-none'/>
         <button onClick={searchCity}>
-            <img src={search} alt="search" width="20" height="20" className='object-fit py-[2px] mr-2' />
+            <img 
+                src={search} 
+                alt="search" 
+                width="20" 
+                height="20" 
+                className='object-fit py-[2px] mr-2' />
         </button>
     </div>
 }
