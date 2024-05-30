@@ -1,30 +1,80 @@
-# React + TypeScript + Vite
+# Weather app
+##  This project is a single page application built with TypeScript, react and redux.
+#### This repo contains an implementation of a weather forecast app using the OpenWeather API.
+<hr />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![screenshot](./home.png)
 
-Currently, two official plugins are available:
+<hr />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built With
 
-## Expanding the ESLint configuration
+- typescript
+- React
+- Postman
+- OpenWeather 
+- Redux
+- Node js
+- Netlify
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Live Demo
 
-- Configure the top-level `parserOptions` property like this:
+[Live Demo Link](https://filmsfusion.netlify.app/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Getting Started
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Here are the steps to follow in order to get this project on your local computer.
+
+### Prerequisites
+
+`node v20.13.1 +`
+
+`npm v9.5.0 +`
+
+### Setup
+
+clone this repo by typing `git clone`
+
+### Install
+
+install the dependacies by typing `npm install`
+
+### Usage
+
+start the local server by running `npm run start`
+
+### Deployment
+
+this project is deployed on Netlify
+
+to get the deployment build of the code run `npm run build`
+
+### Testing
+
+this project uses vitest from testing , to run the tests type `npm test` 
+
+## Authors
+
+👤 **Jospin Ndaano**
+
+- Github: [@Jospin6](https://github.com/Jospin6)
+- Linkedin: [@Jospin](https://www.linkedin.com/in/jospin-ndagano-8474b7267/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed
